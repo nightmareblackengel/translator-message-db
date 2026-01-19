@@ -1,6 +1,6 @@
 {
     "description": "Yii Translator DB Message Storage",
-    "name": "yiisoft/translator-message-db",
+    "name": "nightmareblackengel/translator-message-db",
     "type": "library",
     "keywords": [
         "i18n",
