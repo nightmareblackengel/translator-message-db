@@ -199,10 +199,11 @@ final class MessageSource implements MessageReaderInterface, MessageWriterInterf
             ->innerJoin(
                 ['td' => $this->messageTable],
                 [
-                    'td.id' => new Expression('[[ts.id]]'),
-                    'ts.category' => $category,
+                    'td.id' => new Expression('[[ts]].[[id]]'),
+                    'ts.category' => new Expression(':messageCategory'),
                 ]
             )
+            ->params([':messageCategory' => $category])
             ->where(['locale' => $locale]);
 
         /** @psalm-var array<int, array<string, string>> $messages */
